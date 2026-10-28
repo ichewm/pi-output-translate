@@ -77,7 +77,10 @@ export interface OutputTranslateConfig {
 }
 
 export function agentDir(): string {
-	return process.env.PI_AGENT_DIR ?? join(homedir(), ".pi", "agent");
+	// PI_CODING_AGENT_DIR is pi's documented instance-isolation override —
+	// respecting it is REQUIRED for isolated setups (dev/prod agents,
+	// containers, tests). PI_AGENT_DIR kept as a legacy alias.
+	return process.env.PI_CODING_AGENT_DIR ?? process.env.PI_AGENT_DIR ?? join(homedir(), ".pi", "agent");
 }
 
 export function expandTilde(p: string): string {

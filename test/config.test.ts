@@ -100,3 +100,24 @@ describe("glossary", () => {
 		expect(lines).toMatch(/race condition → .+竞态条件（race condition）/);
 	});
 });
+
+describe("agent dir isolation (release blocker r15c)", () => {
+	it("respects PI_CODING_AGENT_DIR (pi's documented instance override)", async () => {
+		const { agentDir, configPath } = await import("../src/config.ts");
+		const prev = process.env.PI_CODING_AGENT_DIR;
+		const prevLegacy = process.env.PI_AGENT_DIR;
+		try {
+			delete process.env.PI_AGENT_DIR;
+			process.env.PI_CODING_AGENT_DIR = "/tmp/pot-iso-agent";
+			expect(agentDir()).toBe("/tmp/pot-iso-agent");
+			expect(configPath()).toBe("/tmp/pot-iso-agent/output-translate.json");
+			delete process.env.PI_CODING_AGENT_DIR;
+			// legacy alias still works as fallback
+			process.env.PI_AGENT_DIR = "/tmp/pot-iso-legacy";
+			expect(agentDir()).toBe("/tmp/pot-iso-legacy");
+		} finally {
+			process.env.PI_CODING_AGENT_DIR = prev;
+			process.env.PI_AGENT_DIR = prevLegacy;
+		}
+	});
+});
