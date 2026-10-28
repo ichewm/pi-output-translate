@@ -137,7 +137,7 @@ flow back into the agent.
 ## Tests
 
 ```bash
-npm test        # 316 unit/integration tests (vitest)
+npm test        # 317 unit/integration tests (vitest)
 npm run typecheck
 npm run e2e     # full chain: mock engine + real Hub/Server/Role + SSE assertions
 ```

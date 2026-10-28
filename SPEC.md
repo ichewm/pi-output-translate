@@ -598,7 +598,7 @@ nothing; every buffer is bounded with an explicit overflow policy.
    empty-journal filtering and retention fairness, same-basename group
    disambiguation, `notrans` user-prompt journaling, grouped-list ordering.
 
-Current suite: **287 tests / 19 files** (`npm test`).
+Current suite: **317 tests / 22 files** (`npm test`).
 
 ---
 
