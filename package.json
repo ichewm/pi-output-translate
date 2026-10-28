@@ -1,0 +1,48 @@
+{
+	"name": "pi-output-translate",
+	"version": "1.0.0",
+	"description": "Display-only live Chinese translation companion for the Pi coding agent: faithful EN->ZH translation of assistant text and thinking streamed to a shared browser window across multiple Pi sessions. Never touches the agent's execution, context, or terminal output.",
+	"keywords": [
+		"pi",
+		"pi-package",
+		"pi-extension",
+		"translation",
+		"chinese",
+		"display-only"
+	],
+	"license": "MIT",
+	"pi": {
+		"extensions": [
+			"./src/index.ts"
+		]
+	},
+	"main": "./src/index.ts",
+	"scripts": {
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit",
+		"e2e": "node --experimental-strip-types scripts/e2e.ts"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"dompurify": "^3.4.17",
+		"katex": "^0.19.1",
+		"marked": "^18.1.2",
+		"typescript": "^5.6.0",
+		"vitest": "^3.2.0"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=22.6.0"
+	},
+	"files": [
+		"src",
+		"README.md",
+		"SPEC.md",
+		"LICENSE"
+	],
+	"author": "pi-output-translate contributors"
+}

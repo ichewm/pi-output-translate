@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pi 译读</title>
+<link rel="stylesheet" href="./vendor/katex.min.css" />
+<link rel="stylesheet" href="./style.css?token=__TOKEN__" />
+</head>
+<body>
+<!-- Lucide Icons v1.63.0 — ISC License — https://lucide.io -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-arrow-down-to-line" viewBox="0 0 24 24"><path d="M12 17V3" />
+  <path d="m6 11 6 6 6-6" />
+  <path d="M19 21H5" /></symbol>
+<symbol id="i-arrow-left-right" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4" />
+  <path d="M4 7h16" />
+  <path d="m16 21 4-4-4-4" />
+  <path d="M20 17H4" /></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 18V5" />
+  <path d="M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4" />
+  <path d="M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294" />
+  <path d="M17.996 5.125a4 4 0 012.526 5.77" />
+  <path d="M18 18a4 4 0 002-7.465" />
+  <path d="M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517" />
+  <path d="M6 18a4 4 0 01-2-7.465" />
+  <path d="M6.004 5.125a4 4 0 00-2.526 5.77" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" /></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></symbol>
+<symbol id="i-folder-open" viewBox="0 0 24 24"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" /></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
+  <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+<symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6" />
+  <path d="m4 14 6-6 2-3" />
+  <path d="M2 5h12" />
+  <path d="M7 2h1" />
+  <path d="m22 22-5-10-5 10" />
+  <path d="M14 18h6" /></symbol>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+  <path d="M12 22V12" />
+  <polyline points="3.29 7 12 12 20.71 7" />
+  <path d="m7.5 4.27 9 5.15" /></symbol>
+<symbol id="i-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M9 3v18" /></symbol>
+<symbol id="i-scroll-text" viewBox="0 0 24 24"><path d="M15 12h-5" />
+  <path d="M15 8h-5" />
+  <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+  <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" /></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+  <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" /></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+  <path d="M12 9v4" />
+  <path d="M12 17h.01" /></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" />
+  <path d="m6 6 12 12" /></symbol>
+</svg>
+
+<div id="app">
+	<aside id="sidebar">
+		<div class="brand">
+			<span class="brand-mark"><svg class="ic " aria-hidden="true"><use href="#i-arrow-left-right"/></svg></span>
+			<span class="brand-name">pi 译读</span>
+			<button id="btn-sidebar-close" class="icon-btn only-narrow" title="收起"><svg class="ic " aria-hidden="true"><use href="#i-x"/></svg></button>
+		</div>
+		<div class="side-scroll">
+			<div class="side-label">会话</div>
+			<div id="session-list" class="list"></div>
+			<div class="side-label">历史 · 按项目</div>
+			<div id="history-list" class="list"></div>
+		</div>
+		<div class="side-actions">
+			<button id="btn-settings"><svg class="ic " aria-hidden="true"><use href="#i-settings"/></svg> 设置</button>
+			<div class="conn-wrap">
+				<div id="conn-dot" class="dot off" title="未连接"></div>
+				<span id="conn-text" class="conn-text">未连接</span>
+			</div>
+		</div>
+	</aside>
+
+	<div id="scrim" class="scrim hidden"></div>
+
+	<main id="main">
+		<header id="topbar">
+			<button id="btn-sidebar-open" class="icon-btn only-narrow" title="会话"><svg class="ic " aria-hidden="true"><use href="#i-panel-left"/></svg></button>
+			<div class="top-title">
+				<span id="cur-session">—</span>
+				<span id="pipe-ver" class="pill" title="翻译/渲染管线版本（旧 pi 会话会显示旧版本）">·</span>
+				<span id="engine-info" class="pill"></span>
+			</div>
+			<div class="toggles">
+				<div class="toggle" id="tg-dual" title="译文下方常显原文">
+					<span class="tg-ic"><svg class="ic " aria-hidden="true"><use href="#i-arrow-left-right"/></svg></span><span class="tg-lb">对照</span>
+				</div>
+				<div class="toggle on" id="tg-follow" title="新内容到达时自动滚动">
+					<span class="tg-ic"><svg class="ic " aria-hidden="true"><use href="#i-arrow-down-to-line"/></svg></span><span class="tg-lb">跟随</span>
+				</div>
+				<div class="toggle" id="tg-think" title="展开思考过程">
+					<span class="tg-ic"><svg class="ic " aria-hidden="true"><use href="#i-brain"/></svg></span><span class="tg-lb">思考</span>
+				</div>
+			</div>
+		</header>
+
+		<div id="pipe-wrap" class="pipe-idle" title="翻译管线：累积 → 攒批 → 翻译 → 完成。条长 = 剩余未翻译量">
+			<div class="pipe-bar">
+				<div class="pipe-fill" id="pipe-fill"></div>
+				<div class="pipe-mark" id="pipe-mark"></div>
+			</div>
+			<div class="pipe-row">
+				<span class="pipe-label" id="pipe-label">队列空闲</span>
+				<span class="pipe-stages">
+					<span class="stage" id="st-acc"><svg class="ic " aria-hidden="true"><use href="#i-inbox"/></svg><b id="n-acc">0</b><s>累积</s></span>
+					<span class="st-arrow">▸</span>
+					<span class="stage" id="st-bat"><svg class="ic " aria-hidden="true"><use href="#i-package"/></svg><b id="n-bat">–</b><s>批×?</s></span>
+					<span class="st-arrow">▸</span>
+					<span class="stage" id="st-fly"><svg class="ic " aria-hidden="true"><use href="#i-sparkles"/></svg><b id="n-fly">0</b><s>翻译中</s></span>
+					<span class="st-arrow">▸</span>
+					<span class="stage" id="st-done"><svg class="ic " aria-hidden="true"><use href="#i-circle-check"/></svg><b id="n-done">0</b><s>已完成</s></span>
+				</span>
+			</div>
+		</div>
+
+		<div id="flow"><div id="empty-state" class="empty">
+			<div class="empty-ic"><svg class="ic " aria-hidden="true"><use href="#i-languages"/></svg></div>
+			<div class="empty-t1">还没有内容</div>
+			<div class="empty-t2">在任意 pi 终端里开始对话，翻译会实时流到这里。<br/>切换终端后按任意键，页面自动跟随。</div>
+		</div></div>
+
+		<button id="btn-bottom" class="to-bottom hidden" title="回到底部">
+			<span id="queue-info"></span><span class="arr"><svg class="ic " aria-hidden="true"><use href="#i-arrow-down-to-line"/></svg></span>
+		</button>
+	</main>
+</div>
+
+<div id="settings" class="modal hidden">
+	<div class="modal-box">
+		<div class="modal-head"><b>设置</b><button id="btn-close-settings" class="icon-btn"><svg class="ic " aria-hidden="true"><use href="#i-x"/></svg></button></div>
+		<div class="modal-body">
+			<fieldset>
+				<legend>翻译引擎</legend>
+				<div class="row"><label>引擎</label>
+					<select id="s-engine">
+						<option value="ollama">ollama（默认）</option>
+						<option value="openai-compat">openai 兼容 /v1</option>
+						<option value="pi-model">pi 已配置模型</option>
+					</select>
+				</div>
+				<div class="row"><label>地址</label><input id="s-baseurl" placeholder="http://127.0.0.1:11434" /></div>
+				<div class="row"><label>API Key</label><input id="s-apikey" type="password" placeholder="（可选）" /></div>
+				<div class="row"><label>模型</label><input id="s-model" list="s-models" placeholder="qwen3:8b" /><datalist id="s-models"></datalist></div>
+				<div class="row"><label>pi 模型</label><input id="s-pimodel" placeholder="provider/model-id（pi-model 引擎用）" /></div>
+				<div class="row"><label>目标语言</label><input id="s-lang" placeholder="zh-Hans" /></div>
+				<div class="row actions">
+					<button id="btn-models">拉取模型列表</button>
+					<button id="btn-test">试翻一句</button>
+					<span id="test-result"></span>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>内容源</legend>
+				<div class="checks">
+					<label class="switch"><input type="checkbox" id="s-src-text" checked /><i></i>翻译回答正文</label>
+					<label class="switch"><input type="checkbox" id="s-src-think" checked /><i></i>翻译 thinking</label>
+					<label class="switch"><input type="checkbox" id="s-src-user" checked /><i></i>显示用户消息</label>
+					<label class="switch"><input type="checkbox" id="s-src-tools" checked /><i></i>显示工具行</label>
+				</div>
+				<div class="row"><label>代码注释</label>
+					<select id="s-codecomments">
+						<option value="off">不翻译（默认）</option>
+						<option value="below">译后附在代码块下方</option>
+					</select>
+				</div>
+				<div class="row"><label>无页面时</label>
+					<select id="s-idle">
+						<option value="text-only">继续翻正文（进缓存）</option>
+						<option value="none">完全停止</option>
+						<option value="full">全部照翻（含 thinking）</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>性能</legend>
+				<div class="row"><label>单段超时(s)</label><input id="s-timeout" type="number" min="5" max="600" /></div>
+				<div class="row"><label>批量窗口(ms)</label><input id="s-batchwin" type="number" min="50" max="5000" /></div>
+				<div class="row"><label>每批段数</label><input id="s-batchsize" type="number" min="1" max="16" /></div>
+				<div class="row"><label>并发</label><input id="s-conc" type="number" min="1" max="2" /></div>
+			</fieldset>
+			<fieldset>
+				<legend>术语表（每行 english=中文）</legend>
+				<textarea id="s-glossary" rows="6" spellcheck="false"></textarea>
+			</fieldset>
+			<fieldset>
+				<legend>缓存</legend>
+				<div class="row actions">
+					<span id="cache-stats">—</span>
+					<button id="btn-cache-refresh">刷新</button>
+					<button id="btn-cache-clear">清空缓存</button>
+				</div>
+			</fieldset>
+		</div>
+		<div class="modal-foot">
+			<span id="save-result"></span>
+			<button id="btn-save" class="primary">保存（热应用）</button>
+		</div>
+	</div>
+</div>
+<script type="module" src="./app.js?token=__TOKEN__"></script>
+</body>
+</html>
