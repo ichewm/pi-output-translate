@@ -51,9 +51,17 @@
 ## Install
 
 ```bash
-pi install /path/to/pi-output-translate
-# or, for development:
-pi -e /path/to/pi-output-translate/src/index.ts
+# from npm
+pi install npm:pi-output-translate
+
+# from git (pinned to a tag once released)
+pi install git:github.com/ichewm/pi-output-translate
+
+# try it once without installing
+pi -e npm:pi-output-translate
+
+# development
+pi -e /path/to/pi-output-translate
 ```
 
 Restart Pi or run `/reload`. Default configuration is written to

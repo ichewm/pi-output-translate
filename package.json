@@ -21,7 +21,8 @@
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"typecheck": "tsc --noEmit",
-		"e2e": "node --experimental-strip-types scripts/e2e.ts"
+		"e2e": "node --experimental-strip-types scripts/e2e.ts",
+		"prepublishOnly": "npm run typecheck && npm test"
 	},
 	"peerDependencies": {
 		"@earendil-works/pi-coding-agent": "*"
@@ -42,7 +43,16 @@
 		"src",
 		"README.md",
 		"SPEC.md",
+		"THIRD_PARTY_NOTICES.md",
 		"LICENSE"
 	],
-	"author": "pi-output-translate contributors"
+	"author": "pi-output-translate contributors",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ichewm/pi-output-translate.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ichewm/pi-output-translate/issues"
+	},
+	"homepage": "https://github.com/ichewm/pi-output-translate#readme"
 }
